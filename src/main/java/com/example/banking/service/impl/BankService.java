@@ -38,7 +38,7 @@ public class BankService implements AccountService {
 	}
 
 	@Override
-	public BankAccountDto create(BankAccountDto bankAccountDto) {
+	public BankAccountDto create(@Valid BankAccountDto bankAccountDto) {
 		BankAccount savedAccount = accountRepository.save(BankAccountMapper.dtoToEntity(bankAccountDto));
 		return BankAccountMapper.entityToDto(savedAccount);
 	}
